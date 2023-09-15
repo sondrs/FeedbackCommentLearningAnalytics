@@ -311,13 +311,13 @@ class LabelModelTrainer:
         similarity_others = 1 / (1 + distances_to_others)
         
         scores = similarity_label / (similarity_label + similarity_others)
-        scores = MinMaxScaler(feature_range=(-1,1)).fit_transform(scores.reshape(-1,1))
+        scores = MinMaxScaler(feature_range=(0,1)).fit_transform(scores.reshape(-1,1))
          
         self.probabilities = scores  
 
         return scores
     
-    def predictEuclidean(self, representations, threshold=0.5):
+    def predictEuclidean(self, representations, threshold=0.75):
                
         scores = self.getLabelScoresEuclidean(representations)
         
@@ -378,7 +378,7 @@ def productionPreds(reps):
             LMT = LabelModelTrainer(label=l
                             , nComps=nComps
                            )
-            predicted = LMT.predictEuclidean(reps,0.5)
+            predicted = LMT.predictEuclidean(reps,0.75)
                             
             resultsDF[resCol] = [item+predicted[i] for i,item in enumerate(resultsDF[resCol])]
         
