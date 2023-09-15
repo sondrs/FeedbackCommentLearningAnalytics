@@ -2,9 +2,9 @@
 
 This is the repository with all the programming for the Course Evaluation Analysis App created in the design science research process undertaken as part of the master thesis on text mining of course evaluation feedback comments, titled "Learning analytics: Mining student comments to increase course evaluation insights"
 
-The repo contains all code but not all resources used. 
+The repo contains all code and resources required to launch the app except the evaluations file. But it does not include all resources used to create the models.
 
-First and foremost, the course evaluation data, which should be in .csv, and put in the "Input" folder is not included as the data is owned by Kristiania. The filename used as default value in the functions in the implementation is "Evaluation_2020_2021.csv", and the file have questions/metrics spread out in comlumns and responses/samples in rows.
+First and foremost, the course evaluation data, which should be in .csv, and put in the "Input" folder is not included as the data is owned by Kristiania. The filename used as default value in the functions in the implementation is "Evaluation_2020_2021.csv", and the file have questions/metrics spread out in comlumns and responses/samples in rows. Similarly, the labelled training data based on an excerpt from the Evaluation_2020_2021.csv file is not included.
 
 Secondly, training resources used such as the NoReC and ToN corpora which belong in folders 'norec' and 'talk-of-norway' both within the 'resources' folder, are not included. 
 
